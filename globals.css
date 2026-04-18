@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy-950: #03060f;
+  --navy-900: #060d1f;
+  --gold-400: #f8c840;
+}
+
+body {
+  background-color: var(--navy-950);
+  color: #e2e8f0;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  animation: twinkle var(--duration, 4s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.7s ease-out forwards;
+}
+
+.gold-glow {
+  text-shadow: 0 0 20px rgba(248, 200, 64, 0.4);
+}
+
+.card-glow {
+  box-shadow: 0 0 30px rgba(248, 200, 64, 0.08), 0 8px 32px rgba(0,0,0,0.4);
+}
+
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(248, 200, 64, 0.5);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #060d1f;
+}
+::-webkit-scrollbar-thumb {
+  background: #f8c840;
+  border-radius: 3px;
+}
